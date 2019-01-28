@@ -1,0 +1,37 @@
+doctype html
+html
+    include includes/head.pug
+    link(rel="stylesheet", type="text/css", href="/css/article.css")
+    body(class="has-navbar-fixed-top")
+        include includes/header.pug
+        div(class="columns article content")
+            div(class="column is-three-fifths is-offset-one-fifth")
+                p(class="title is-2") #{title}
+                //- p(class="subtitle is-5") #{subtitle}
+                span(class="article-infor") 作者： #{author}
+                span |
+                span(class="article-infor") 发表时间：#{pd.toLocaleString()}
+                span |
+                span(class="article-infor") 阅读量：#{count}
+                hr
+                div(id="content-div") #{content}
+                hr
+                div(class="like-unlike")
+                    a(class="button")
+                        span(class="icon is-small").
+                            #[i(class="fas fa-thumbs-up")]
+                        span #{like}
+                    a(class="button")
+                        span(class="icon is-small").
+                            #[i(class="fas fa-thumbs-down")]
+                        span #{unlike}
+        include includes/footer.pug
+        script.
+            window.onload = function () {
+                var content = document.getElementById('content-div')
+                var htmlstr = content.innerText
+                //- console.log(htmlstr)
+                content.innerText = ''
+                content.innerHTML = htmlstr
+                //- content.innerHTML = content
+            }

@@ -1,0 +1,41 @@
+doctype html
+html
+    include includes/head.pug
+    link(rel="stylesheet", type="text/css", href="/css/blogpage.css")
+    body(class="has-navbar-fixed-top")
+        include includes/header.pug
+        div(class="columns user-page")
+            div(class="column is-2 is-offset-2")
+                figure(id="user_figure",class="image is-128x128 has-text-centered")
+                    img(src=avatar)
+                p(class="title is-4") #{username}
+                p(class="subtitle is-6") #{motto}
+                hr
+                div
+                    p(class="subtitle is-6",style="margin-bottom: 10px") 近期文章
+                div
+                    p(class="subtitle is-6",style="margin-bottom: 10px") 一些链接
+                    div(class="side-link")
+                        a(href="http://spencerwoo.com") spencer 的博客
+                    div(class="side-link")
+                        a(href="http://spencerwoo.com") spencer 的博客
+            div(class="column is-6 all-articles")
+                div()
+                    - for (var i = 0; i < article.length; i ++)
+                        div(class="article-list")
+                            - var link = "/article/article_id/" + article[i].id
+                            a(href=link,class="title is-3 article-list-title") #{article[i].title}
+                            p(class="article-list-subtitle") #{article[i].subtitle}
+                            span(class="article-list-calendar").
+                                #[i(class="fas fa-calendar")] #{article[i].pd.toLocaleString()}
+                            span |
+                            - for (var j = 0; j < article[i].tags.length; j ++)
+                                span(class="article-list-tags").
+                                    #[i(class="fas fa-tag")]
+                                    #[a #{article[i].tags[j]}]
+                            span |
+                            span(class="article-list-count") 阅读量：#{article[i].count}
+                            hr
+                div()
+                    a 1
+        include includes/footer.pug

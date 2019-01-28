@@ -1,0 +1,118 @@
+.navigation{
+	/*background-color: rgba(0,0,0,0.05);*/
+	background-color: #36383A;
+}
+
+.navigation div a{
+	color: #fff;
+}
+
+/**
+#E7B896
+#BB6237
+#36383A
+#5B6E6B
+#ADBCBA
+#D0D6DB
+**/
+
+.whole-page{
+	background-image: url(../img/backimage.png);
+	height: 550px;
+	width: 100%;
+	background-position: center 0;
+	background-size: 100% 100%;
+}
+
+.nav-left a{
+	font-size: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	margin-left: 45px;
+}
+
+.nav-left a:hover{
+	color: #fff;
+}
+
+.nav-end{
+	padding: 0 35px;
+}
+
+.nav-end a{
+	font-size: 15px;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.nav-end a:hover{
+	color: #BB6237;
+	text-decoration: underline;
+	background-color: #fff;
+}
+
+.nav-end a span{
+	padding-left: 3px;
+}
+
+.gh-btn{
+	background-color: #eee;
+	text-decoration: none;
+	border: 1px solid #d5d5d5;
+	border-radius: 4px;
+	line-height: 22px;
+	color: black;
+}
+
+.gh-icon{
+	padding: 2px 2px 2px 6px;
+}
+
+.gh-text{
+	padding: 2px 6px 2px 2px;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.intro-level{
+	background-color: #fafafa;
+}
+.introduction{
+	padding-left: 150px;
+	padding-top: 80px;
+}
+.image-tree{
+	margin-right: 100px;
+	width: 640px;
+	transform: translate(0,23%);
+}
+
+.content-page{
+	background-color: #e7e7e7;
+	padding: 100px;
+}
+.content-box{
+	background-color: #5B6E6B;
+	text-align: center;
+}
+
+.foot{
+	padding-bottom: 3rem;
+	background-color: #36383A;
+}
+.foot a{
+	text-decoration: underline;
+	color: #fff;
+}
+.foot a:hover{
+	text-decoration: none;
+}
+.foot p,.foot p strong{
+	line-height: 80%;
+	color: #fff;
+}
+
+body{
+	font-family: Cantarell, Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
