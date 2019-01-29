@@ -1,0 +1,38 @@
+.menu-column{
+    background-color:#36383A;
+    position: fixed;
+    height: 100vh;
+    width: 16.2%;
+}
+
+.menu{
+    font-size: 15px;
+    overflow: auto;
+    border-right: 1px solid #dddddd;
+    padding: 36px 35px;
+}
+
+.menu-content-back a{
+    color: #BB6237;
+    text-decoration: underline;
+}
+.menu-content-back a:hover{
+    color: #E7B896;
+}
+
+.menu-content{
+    padding-top: 50px;
+}
+
+.menu-list li a{
+    color: #ADBCBA;
+}
+.menu-list li a:hover{
+    color: #E7B896;
+    background-color: #36383A;
+}
+
+.menu-list a.isactive{
+    color: #E7B896;
+    background-color: #36383A;
+}

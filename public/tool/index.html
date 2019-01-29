@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Silvester</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <div id="tools" class="columns">
+        <div class="column is-2">
+            <div class="menu-column">
+                <aside class="menu">
+                    <div class="menu-content-back">
+                        <a href="/">返回主页</a>
+                    </div>
+                    <div class="menu-content">
+                        <p class="title is-5" style="color: #BB6237">小工具</p>
+                        <ul id="menu" class="menu-list">
+                            <li v-for="item in menus">
+                                <a class="menu-link" v-bind:name="item.name" v-on:click="changeMenu">{{ item.title }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <div class="column">
+            <component v-bind:is="currentComponent"></component>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+<style>
+
+</style>
+</html>
