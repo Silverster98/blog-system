@@ -11,7 +11,7 @@ app.use('/css', express.static('./public/css'))
 
 /********************* main page *********************/
 app.use('/', express.static('./public/main'))
-app.use('/', express.static('./public/tool'))
+app.use('/tools', express.static('./public/tool'))
 
 /********************* login page *********************/
 // app.use('/login', express.static('./public/login'))

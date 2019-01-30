@@ -36,3 +36,13 @@
     color: #E7B896;
     background-color: #36383A;
 }
+
+/********* 进制转换部分 ***********/
+div.num-trans{
+    margin-top: 150px;
+    margin-left: 100px;
+}
+
+.code{
+    font-size: 18px;
+}
