@@ -36,6 +36,9 @@
 - articleuid: 对应文章表 articleuid 字段
 - taguid: 对应标签表 taguid 字段
 
+具体数据库设计图：
+![](../img_doc/db.png)
+
 ### 5.docker mysql 容器使用
 
 ##### 1.创建mysql容器
