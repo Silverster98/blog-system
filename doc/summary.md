@@ -34,5 +34,7 @@
     + 2.1[数据库说明](./db_doc/db.md)
 - 3.部署
     + 3.1[部署说明](./deploy_doc/deploy.md)
+- 4.开发过程记录
+    + 4.1[开发笔记](./dev_doc/develop.md)
     
 

@@ -28,8 +28,12 @@ app.use('/css', express.static('./public/css'))
 
 /********************* main page *********************/
 app.use('/', express.static('./public/main'))
+
+//********************* tools page *********************/ */
 app.use('/tools', express.static('./public/tool'))
-app.use('/upload', express.static('./public/upload'))
+
+//********************* upload file *********************/ */
+// app.use('/upload', express.static('./public/upload'))
 
 /********************* login page *********************/
 // app.use('/login', express.static('./public/login'))
@@ -115,11 +119,11 @@ app.get('/article/article_id/:id', (req, res, next) => {
 	})
 })
 
-app.post('/upload/uploadfile', upload.single('userfile'), (req, res, next) => {
-	res.json({
-		status: 'ok'
-	})
-})
+// app.post('/upload/uploadfile', upload.single('userfile'), (req, res, next) => {
+// 	res.json({
+// 		status: 'ok'
+// 	})
+// })
 
 app.get('/test', (req, res) => {
 	res.json({
