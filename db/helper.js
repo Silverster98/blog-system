@@ -140,6 +140,22 @@ async function updateUserById (option) {
     })
 }
 
+async function getUserPWByName (name) {
+    return new Promise((resolve, reject) => {
+        const sqlStatement = sql.searchUserPWByName({name: name})
+        pool.query(sqlStatement, (error, result) => {
+            if (error) reject(error)
+            else 
+                if (result.length === 0) resolve({result: 0})
+                else {
+                    const id = result[0]['useruid']
+                    const pw = result[0]['userpw']
+                    resolve({result: 1, id: id, pw: pw})
+                }
+        })
+    })
+}
+
 // getArticleById({id: 1}).then((res) => {
 //     console.log(res)
 //     pool.end()
@@ -159,6 +175,7 @@ module.exports = {
     getArticleSummaryList: getArticleSummaryList,
     getArticleById: getArticleById,
     getUserASLByUserId: getUserASLByUserId,
+    getUserPWByName: getUserPWByName,
     updateArticleById: updateArticleById,
     updateUserById: updateUserById
 }

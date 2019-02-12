@@ -1,8 +1,25 @@
+const fs = require('fs')
 const express = require('express')
 const app = express()
 const b64 = require('./util/b64file')
 const dbhelper = require('./db/helper')
 const marked = require('marked')
+// const bodyParser = require('body-parser')
+const multer = require('multer')
+const storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		const path = 'upload/' + new Date().getFullYear() + (new Date().getMonth()+1) + new Date().getDate()
+		fs.exists(path, (exists) => {
+			if (!exists) fs.mkdirSync(path)
+			cb(null, path)
+		})
+	},
+	filename: function (req, file, cb) {
+		const filenameArr = file.originalname.split('.')
+    	cb(null, Date.now() + '.' + filenameArr[filenameArr.length-1]);
+	}
+})
+const upload = multer({ storage: storage }) // for parsing multipart/form-data
 
 app.set('view engine', 'pug')
 
@@ -12,6 +29,7 @@ app.use('/css', express.static('./public/css'))
 /********************* main page *********************/
 app.use('/', express.static('./public/main'))
 app.use('/tools', express.static('./public/tool'))
+app.use('/upload', express.static('./public/upload'))
 
 /********************* login page *********************/
 // app.use('/login', express.static('./public/login'))
@@ -94,6 +112,18 @@ app.get('/article/article_id/:id', (req, res, next) => {
 		res.json({
 			error: error.message
 		})
+	})
+})
+
+app.post('/upload/uploadfile', upload.single('userfile'), (req, res, next) => {
+	res.json({
+		status: 'ok'
+	})
+})
+
+app.get('/test', (req, res) => {
+	res.json({
+		status: 'ok'
 	})
 })
 

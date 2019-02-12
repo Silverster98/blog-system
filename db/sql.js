@@ -1,4 +1,11 @@
 const sql = {
+    searchUserPWByName: function (option) {
+        const name = option.name || ''
+        let s = `select useruid,userpw from user where username = "${name}";`
+        
+        return s
+    },
+
     searchUserArticleById: function (option) {
         const id = option.id || 0
         let s = `select article.articleuid,article.articletitle,` + 
